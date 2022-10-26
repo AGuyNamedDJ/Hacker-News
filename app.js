@@ -1,7 +1,7 @@
 // Step 1: Node Runtime Env Import
 const express = require("express");
 const morgan = require("morgan");
-const path = 
+const path = require("path");
 
 // Browser Runtime Env Import
 // import React from "react";
@@ -16,10 +16,11 @@ const app = express();
 app.use(morgan("dev"));
 
 // Step 4: Express.Static
-
+const staticMiddlware = express.static(path.join(__dirname, "public"));
+app.use(staticMiddlware);
 
 // Step 5: Write 1st Route Handler
-app.get("/", (req, res, next) => {
+app.get("/", (request, response, next) => {
     console.log("Bonjou!")
     res.send(`
     <div>
@@ -31,7 +32,10 @@ app.get("/", (req, res, next) => {
 
 // Example Route
 app.get("/puppies:puppyid", (request, response, next)=> {
-    res.send(`<h1> `)
+    res.send(`
+    <div>
+        <p> This is a puppy #${req.params.puppyId}</p>
+    </div> `)
 });
 
 // Step 6: Boot up Express server by "listening" to itconst PORT = 3000;
