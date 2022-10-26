@@ -12,6 +12,5 @@ Important note: Right now, there will be no persistent database in our applicati
 
 ---
 
-10/27 Lectures with the package json info in the scripts value
-
---- Current Locatioin 7. Create route w/ list of all post titles & authors
+10/27 Lectures with the package json info in the scripts valueListing Posts
+working on the app.js file

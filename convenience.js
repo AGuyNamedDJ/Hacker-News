@@ -12,3 +12,11 @@ const convenienceRouter = express.Router();
 
 // Step 4: Export Mini Router
 module.exports = convenienceRouter;
+
+
+// const convRouter = express. Router);
+
+// / STEP 3: BRING IN ALL OF YOUR ROUTE HANDLERS THAT YOU'D LIKE TO USE
+// convRouter.get (" /dumbconvenience", (req, res, next) => {
+// res. send ('<h2>Find All Your DumbAmazon Convenience Goods Here:</h2>')
+// })

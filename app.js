@@ -28,12 +28,12 @@ app.get("/", (req, res, next) => {
     res.send(`
     <div>
         <h1>Welcome to Hacker News! </h1>
-        // <a href="/puppies"> Go to Hacker News</a>
+
     </div>
     `)
 });
 
-// Scratth Post Bank
+// Scratch Post Bank
 app.get("/", (req, res) => {
     // posts = the data from the postBank.js we grabbed
     const posts = postBank.list();
@@ -46,14 +46,16 @@ app.get("/", (req, res) => {
     </head>
     <body>
     <ul>
-    ${posts}.map
+        ${posts.map(posts => `<li>${data}</li>`)}
     </ul>
     
     
-    </body>`
-})
+    </body>
+    </html>`;
 
-
+    // Sending out the response
+    res.send(html);
+});
 
 
 // Example Route
@@ -70,4 +72,9 @@ app.listen(PORT, () => {
     console.log(`Running on port ${PORT}`)
 });
 
-// gbadjk
+//Understand what the ${post} . map is doing; review
+
+// Notes
+    // variable post here is POSTS
+    // Not understanding how we imported the postBank.js
+        // line 49?

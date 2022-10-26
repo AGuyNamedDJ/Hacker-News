@@ -29,3 +29,6 @@ const find = (id) => {
 
 // Exporting The postBank module
 module.exports = { list: list, find: find };
+
+// Notes
+    // variable post here is POST
