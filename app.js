@@ -17,8 +17,14 @@ const app = express();
 app.use(morgan("dev"));
 
 // Step 4: Express.Static
-const staticMiddlware = express.static(path.join(__dirname, "public"));
-app.use(staticMiddlware);
+    // is this our import?
+const staticMiddleware = express.static(path.join(__dirname, "public"));
+    // this is just adding /public to the entire dirname
+    // now we have accesss to everything inside the public dir
+
+// Setup Middleware Browser Handeler
+app.use(staticMiddleware);
+ 
 
 // Step 5: Write 1st Route Handler
 
@@ -67,12 +73,15 @@ app.get("/", (req, res) => {
 // });
 
 // Step 6: Boot up Express server by "listening" to itconst PORT = 3000;
+//Port Variable
 const PORT = 3000;
+
+// Server listening
 app.listen(PORT, () => {
     console.log(`Running on port ${PORT}`)
 });
 
-//Understand what the ${post} . map is doing; review
+// Understand what the ${post} . map is doing; review
 
 // Notes
     // variable post here is POSTS

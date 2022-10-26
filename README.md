@@ -13,4 +13,7 @@ Important note: Right now, there will be no persistent database in our applicati
 ---
 
 10/27 Lectures with the package json info in the scripts valueListing Posts
-working on the app.js file
+
+---
+
+working on the 7 route handelers/ static routing
