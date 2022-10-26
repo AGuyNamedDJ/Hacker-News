@@ -16,31 +16,31 @@ const app = express();
 // Step 3: Bring in Morgan Middleware
 app.use(morgan("dev"));
 
-// Step 4: Express.Static
-    // is this our import?
+// Step 4a: Express.Static
 const staticMiddleware = express.static(path.join(__dirname, "public"));
     // this is just adding /public to the entire dirname
     // now we have accesss to everything inside the public dir
 
-// Setup Middleware Browser Handeler
+// Setup 4b: Middleware Browser Handeler
 app.use(staticMiddleware);
  
 
+// Example
+
+// app.get("/", (req, res, next) => {
+//     res.send(`
+//     <div>
+//         <h1>Welcome to Hacker News! </h1>
+
+//     </div>
+//     `)
+// });
+
+
 // Step 5: Write 1st Route Handler
-
-    //Home
-app.get("/", (req, res, next) => {
-    // console.log("Bonjou!")
-    res.send(`
-    <div>
-        <h1>Welcome to Hacker News! </h1>
-
-    </div>
-    `)
-});
-
-// Scratch Post Bank
 app.get("/", (req, res) => {
+    // home path ./
+
     // posts = the data from the postBank.js we grabbed
     const posts = postBank.list();
 
@@ -49,28 +49,32 @@ app.get("/", (req, res) => {
     <html>
     <head>
         <title>Wizard News</title>
+        <link rel="stylesheet" href="/style.css" />
     </head>
-    <body>
-    <ul>
-        ${posts.map(posts => `<li>${data}</li>`)}
-    </ul>
-    
-    
-    </body>
-    </html>`;
 
-    // Sending out the response
+    <body>
+    <div class="news-list">
+    <header><img src="/logo.png"/>Wizard News</header>
+    ${posts.map(post => `
+    <div class='news-item'>
+      <p>
+        <span class="news-position">${post.id}. ▲</span>${post.title}
+        <small>(by ${post.name})</small>
+      </p>
+      <small class="news-info">
+        ${post.upvotes} upvotes | ${post.date}
+      </small>
+    </div>`
+  ).join('')}
+</div>
+</body>
+</html>`
+    // Here we have tagged the style.css in the header 
+
+// Sending out the response
     res.send(html);
 });
 
-
-// Example Route
-// app.get("/puppies:puppyid", (req, res, next)=> {
-//     res.send(`
-//     <div>
-//         <p> This is a puppy #${req.params.puppyId}</p>
-//     </div> `)
-// });
 
 // Step 6: Boot up Express server by "listening" to itconst PORT = 3000;
 //Port Variable
@@ -87,3 +91,12 @@ app.listen(PORT, () => {
     // variable post here is POSTS
     // Not understanding how we imported the postBank.js
         // line 49?
+
+// app.get("/", (req, res, next) => {
+//     res.send(`
+//     <div>
+//         <h1>Welcome to Hacker News! </h1>
+
+//     </div>
+//     `)
+// });

@@ -16,4 +16,4 @@ Important note: Right now, there will be no persistent database in our applicati
 
 ---
 
-working on the 7 route handelers/ static routing
+working on the 7 styling initial route
