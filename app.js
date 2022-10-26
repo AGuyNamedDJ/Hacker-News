@@ -25,18 +25,6 @@ const staticMiddleware = express.static(path.join(__dirname, "public"));
 app.use(staticMiddleware);
  
 
-// Example
-
-// app.get("/", (req, res, next) => {
-//     res.send(`
-//     <div>
-//         <h1>Welcome to Hacker News! </h1>
-
-//     </div>
-//     `)
-// });
-
-
 // Step 5: Write 1st Route Handler
 app.get("/", (req, res) => {
     // home path ./
@@ -52,6 +40,7 @@ app.get("/", (req, res) => {
         <link rel="stylesheet" href="/style.css" />
     </head>
 
+    <html>
     <body>
     <div class="news-list">
     <header><img src="/logo.png"/>Wizard News</header>
@@ -82,7 +71,7 @@ const PORT = 3000;
 
 // Server listening
 app.listen(PORT, () => {
-    console.log(`Running on port ${PORT}`)
+    console.log(`Running on port ${PORT}`);
 });
 
 // Understand what the ${post} . map is doing; review
@@ -91,12 +80,3 @@ app.listen(PORT, () => {
     // variable post here is POSTS
     // Not understanding how we imported the postBank.js
         // line 49?
-
-// app.get("/", (req, res, next) => {
-//     res.send(`
-//     <div>
-//         <h1>Welcome to Hacker News! </h1>
-
-//     </div>
-//     `)
-// });
