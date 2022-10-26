@@ -102,8 +102,6 @@ if(!post.id) {
 } else {
 
 
-
-
 res.send(html)
 }})
 
