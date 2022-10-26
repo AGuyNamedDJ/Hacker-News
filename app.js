@@ -20,26 +20,28 @@ const staticMiddlware = express.static(path.join(__dirname, "public"));
 app.use(staticMiddlware);
 
 // Step 5: Write 1st Route Handler
-app.get("/", (request, response, next) => {
-    console.log("Bonjou!")
+
+    //Home
+app.get("/", (req, res, next) => {
+    // console.log("Bonjou!")
     res.send(`
     <div>
         <h1>Welcome to Hacker News! </h1>
-        <a href="/puppies"> Go to Hacker News</a>
+        // <a href="/puppies"> Go to Hacker News</a>
     </div>
     `)
 });
 
 // Example Route
-app.get("/puppies:puppyid", (request, response, next)=> {
-    res.send(`
-    <div>
-        <p> This is a puppy #${req.params.puppyId}</p>
-    </div> `)
-});
+// app.get("/puppies:puppyid", (req, res, next)=> {
+//     res.send(`
+//     <div>
+//         <p> This is a puppy #${req.params.puppyId}</p>
+//     </div> `)
+// });
 
 // Step 6: Boot up Express server by "listening" to itconst PORT = 3000;
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`We are cooking on port ${PORT}`)
+    console.log(`Running on port ${PORT}`)
 });
