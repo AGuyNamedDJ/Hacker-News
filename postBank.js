@@ -13,4 +13,15 @@ const data = [
     { id: 12, upvotes: 30, title: "Do you still use Alarte Ascendare?", content: "You've got levicorpus and Ascendio and wingardium leviosa, so is anyone still using Alarte Ascendare, too? (That is, unless you find wingardium leviosa too difficult to pronounce.)", name: "Bellatrix1", date: new Date(Date.now() - 6000000) },
     { id: 13, upvotes: 21, title: "Mailing lists WN readers ought to know about?", content: "I love to subscribe to information feeds through mailing list subscription. What do you subscribe to that you think others would benefit by if they were to as well?", name: "Dracod", date: new Date(Date.now() - 60000) },
     { id: 14, upvotes: 10, title: "How to tell which spell used on a bug?", content: "Question: Are ther any non-jinx incantations available to detect which spell used on a bug?", name: "Lupin", date: new Date() }
-  ];
+];
+
+const list = () => {
+    return [...data] // Notice that we're returning a copy of the array, so the original data is safe. This is called 'immutability'.
+}; 
+  
+const find = (id) => {
+    const post = data.find(post => post.id === Number(id));
+    return {...post}; // Again, we copy the post data before returning so the original information is safe.
+}
+  
+module.exports = { list: list, find: find };
