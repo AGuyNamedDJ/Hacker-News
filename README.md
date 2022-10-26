@@ -9,3 +9,9 @@ We will build:
 A homepage similar to Hacker News, that lists all posts.
 A Details page, that shows the complete news content.
 Important note: Right now, there will be no persistent database in our application; we will simply be using a JavaScript array to hold objects in the server's RAM.
+
+---
+
+10/27 Lectures with the package json info in the scripts value
+
+--- Current Locatioin 7. Create route w/ list of all post titles & authors

@@ -2,6 +2,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
+const postBank = require("./postBank");
 
 // Browser Runtime Env Import
 // import React from "react";
@@ -32,6 +33,29 @@ app.get("/", (req, res, next) => {
     `)
 });
 
+// Scratth Post Bank
+app.get("/", (req, res) => {
+    // posts = the data from the postBank.js we grabbed
+    const posts = postBank.list();
+
+    // data for actual page content, update after making
+    const html = `<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Wizard News</title>
+    </head>
+    <body>
+    <ul>
+    ${posts}.map
+    </ul>
+    
+    
+    </body>`
+})
+
+
+
+
 // Example Route
 // app.get("/puppies:puppyid", (req, res, next)=> {
 //     res.send(`
@@ -45,3 +69,5 @@ const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Running on port ${PORT}`)
 });
+
+// gbadjk
