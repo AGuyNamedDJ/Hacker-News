@@ -21,8 +21,6 @@ const list = () => {
 }; 
   
 const find = (id) => {
-    // This is Recursion
-        // Think of how the chicken needed the egg, but the egg needs the chicken, etc
     const post = data.find(post => post.id === Number(id));
     return {...post}; // Again, we copy the post data before returning so the original information is safe.
 }

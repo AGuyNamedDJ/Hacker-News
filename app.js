@@ -107,7 +107,7 @@ res.send(html)
 
 app.use((err, req, res, next) => {
   console.error(err.stack)
-  res.status(500).send('Oops, Page Not Found')
+  res.status(500).send('Woah There! Page Not Found :( ')
 })
 
 // Server listening
@@ -115,9 +115,5 @@ app.listen(PORT, () => {
   console.log(`App listening in port ${PORT}`);
 });
 
-// Understand what the ${post} . map is doing; review
-
 // Notes
-    // variable post here is POSTS
-    // Not understanding how we imported the postBank.js
-        // line 49?
+  
