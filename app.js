@@ -7,13 +7,13 @@ const postBank = require("./postBank");
 // Browser Runtime Env Import
 // import React from "react";
 
-// Step 2: Create a New Express Server Instannce
+// Step 2: Create a New Express Server Instance
 const app = express();
 
     //Optional combine Steps 1 & 2
     // const app = require("express")();
 
-// Step 6: Boot up Express server by "listening" to itconst PORT = 3000;
+// Step 6: Boot up Express server by "listening" to it
 //Port Variable
 const PORT = 3000;
 
